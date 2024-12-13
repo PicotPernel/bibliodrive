@@ -9,10 +9,9 @@
     <div class="col-9">
         <nav class="navbar navbar-expand-sm bg-dark">
             <div class="container-fluid">
-                <form class="d-flex">
-                    <input class="form-control" size=65 type="text"
-                        placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)">
-                    <button class="btn btn-secondary" type="button">Rechercher</button>
+                <form class="d-flex" method="post" action="liste.php">
+                    <input class="form-control" size=65 type="text" name="entete" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)">
+                    <button class="btn btn-secondary" type="submit" name="chercher">Rechercher</button>
                 </form>
                 <ul>
                     <li class="nav-item">

@@ -14,18 +14,18 @@ $select = $connexion->prepare("SELECT * FROM livre order by dateajout asc limit 
 $select->setFetchMode(PDO::FETCH_OBJ);
 $select->execute();
 $enregistrement = $select->fetch();
-echo "<div class='carousel-item active'>
-        <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:100%'>
+echo"<div class='carousel-item active d-flex justify-content-center'>
+        <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:30%'>
       </div>";
 
 while($enregistrement = $select->fetch())
 {
- echo "<div class='carousel-item'>
-          <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:100%'>
+ echo "<div class='carousel-item d-flex justify-content-center'>
+          <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:30%'>
         </div>";
 }
 ?>
-</div>
+<div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
     <span class="sr-only">Previous</span>
