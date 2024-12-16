@@ -1,4 +1,6 @@
-<?php include 'entete.php' ;?>
-<?php include 'carousel.php' ;?>
-
-<?php include 'pied_de_page.html';?>
+<?php 
+include 'entete.php' ; 
+include 'carousel.php' ;
+include 'authentification.php';
+include 'pied_de_page.html';
+?>
