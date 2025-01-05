@@ -1,5 +1,7 @@
 <?php 
-include 'entete.php' ;
+session_start();
+include 'entete.php';
+include 'authentification.php';
 ?>
 <div class="row">
 <div class="col-1">
