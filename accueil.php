@@ -1,5 +1,4 @@
-<?php 
-session_start();
+<?php
 include 'entete.php' ; 
 include 'authentification.php';
 include 'carousel.php' ;

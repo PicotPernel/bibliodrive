@@ -1,5 +1,4 @@
-<div id="demo" class="carousel slide col-9" data-bs-ride="carousel">
-</br>    
+<div id="demo" class="carousel slide col-9" data-bs-ride="carousel"> 
 <h2 class="text-center text-success">Dernières acquisitions</h2>
 </br>
   <div class="carousel-indicators">
