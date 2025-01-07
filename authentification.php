@@ -101,8 +101,7 @@ else
 }
 if(isset($_POST["btnDéconnecter"]))
 {
-    ///echo "<h1>Coucou</h1>";
     session_destroy();
-    header('url=accueil.php');
+    header('Refresh:0;');
 }
 ?>

@@ -1,6 +1,5 @@
 <div id="demo" class="carousel slide col-9" data-bs-ride="carousel"> 
 <h2 class="text-center text-success">Dernières acquisitions</h2>
-</br>
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -13,14 +12,17 @@ $select = $connexion->prepare("SELECT * FROM livre order by dateajout asc limit 
 $select->setFetchMode(PDO::FETCH_OBJ);
 $select->execute();
 $enregistrement = $select->fetch();
-echo" <div class='carousel-item active d-flex justify-content-center'>
+echo" <div class='carousel-item active'>
+      <div class='d-flex justify-content-center'>
         <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:30%'>
+      </div>
       </div>";
-
 while($enregistrement = $select->fetch())
 {
- echo " <div class='carousel-item d-flex justify-content-center'>
+ echo " <div class='carousel-item'>
+       <div class='d-flex justify-content-center'>         
           <img src=./images/$enregistrement->image alt='$enregistrement->titre' class='d-block' style='width:30%'>
+          </div>
         </div>";
 }
 ?>
