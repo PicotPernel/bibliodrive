@@ -15,13 +15,17 @@ if(!isset($_SESSION["nom"]))
         </div>
         <div class=col-3>
         <h5 class="text-center">Se connecter</h5>
+        <div class="d-flex justify-content-center">
         <form action="./accueil.php" method="post">
         <label for="ID">Identifiant</label><br>
         <input type="text" id="ID" name="ID"><br>
         <label for="lname">Mot de passe</label><br>
         <input type="text" id="MDP" name="MDP"><br><br>
         <input type="submit" value="Se connecter" name="btnConnecter">
+        </br>
+        <a href=./accueiladmin.php class="text-center" size=55>Cliquez ici pour se connecter en admin</a>
         </form>
+        </div>
         </div>
         </div> 
         </div>';
@@ -67,6 +71,7 @@ if(!isset($_SESSION["nom"]))
         </div>
         <div class=col-3>
         <h5 class="text-center">Se connecter</h5>
+        <div class="d-flex justify-content-center">
         <h6 class="text-center">Identifiant ou mot de passe incorrect</h6>
         <form action="./accueil.php" method="post">
         <label for="ID">Identifiant</label><br>
@@ -74,7 +79,10 @@ if(!isset($_SESSION["nom"]))
         <label for="lname">Mot de passe</label><br>
         <input type="text" id="MDP" name="MDP"><br><br>
         <input type="submit" value="Se connecter" name="btnConnecter">
+        </br>
+        <a href=./accueiladmin.php class="text-center" size=55>Cliquez ici pour se connecter en admin</a>
         </form>
+        </div>
         </div>
         </div> 
         </div>';
@@ -93,10 +101,11 @@ else
     echo '<h4 class="text-center">Bonjour </h4></br><h3 class="text-center">'.$_SESSION["nom"].' '.$_SESSION['prenom'].'</h3>
     <div>
     </br>
+    <div class="d-flex justify-content-center">
     <form action="./accueil.php" method="post">
     <input type="submit" value="Déconnexion" name="btnDéconnecter">
     </form>
-    </div>
+    </div> </div>
     </div> </div>';
 }
 if(isset($_POST["btnDéconnecter"]))

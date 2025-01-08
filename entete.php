@@ -16,9 +16,9 @@
                     </form>
                     <ul>
                         <li class="nav-item">
-                            <button class="btn btn-secondary" size=55>
+                            <a class="btn btn-secondary" href="./panier.php" size=55>
                                 Panier
-                            </button>
+                            </a>
                         </li>
                     </ul>
                 </div>
