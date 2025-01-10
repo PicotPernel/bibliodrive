@@ -15,7 +15,7 @@ if(!isset($_SESSION["nom"]))
         </div>
         <div class=col-3>
         <h5 class="text-center">Se connecter</h5>
-        <div class="d-flex justify-content-center">
+        <div class="text-center">
         <form action="./accueil.php" method="post">
         <label for="ID">Identifiant</label><br>
         <input type="email" id="ID" name="ID"><br>
@@ -25,7 +25,6 @@ if(!isset($_SESSION["nom"]))
         </form>
         </div>
         </div>
-        </div> 
         </div>';
     }
     else
@@ -37,7 +36,6 @@ if(!isset($_SESSION["nom"]))
         $select->bindValue(":mdp",$_POST["MDP"]);
         $select->execute();
         $enregistrement = $select->fetch();
-
         $_SESSION["nom"]=$enregistrement->nom;
         $_SESSION["prenom"]=$enregistrement->prenom;
         $_SESSION["adresse"]=$enregistrement->adresse;
@@ -48,6 +46,7 @@ if(!isset($_SESSION["nom"]))
         {
             if ($enregistrement)
             {    
+
                 echo '<div class="row">
                 <div class=col-1>
                 </div>    
@@ -61,7 +60,9 @@ if(!isset($_SESSION["nom"]))
                 <h3 class="text-center">'.$_SESSION["codepostal"].' '.$_SESSION["ville"].'</h3>
                 </br>
                 <form action="./accueil.php" method="post">
-                <input type="submit" value="Déconnexion" name="btnDéconnecter">
+                <div class=text-center>    
+                    <input type="submit" value="Déconnexion" name="btnDéconnecter">
+                </div>
                 </form>
                 </div> 
                 </div> 
@@ -78,17 +79,16 @@ if(!isset($_SESSION["nom"]))
                 <div class=col-3>
                 <h5 class="text-center">Se connecter</h5>
                 <h6 class="text-center">Identifiant/Mot de passe incorrect</h6>
-                <div class="d-flex justify-content-center">
+                <div class="text-center">
                 <form action="./accueil.php" method="post">
                 <label for="ID">Identifiant</label><br>
-                <input type="text" id="ID" name="ID"><br>
+                <input type="email" id="ID" name="ID"><br>
                 <label for="lname">Mot de passe</label><br>
-                <input type="text" id="MDP" name="MDP"><br><br>
+                <input type="password" id="MDP" name="MDP"><br><br>
                 <input type="submit" value="Se connecter" name="btnConnecter">
                 </form>
                 </div>
                 </div>
-                </div> 
                 </div>';
             }
         }
@@ -97,6 +97,29 @@ if(!isset($_SESSION["nom"]))
             if($_SESSION["profil"]=="admin")
             {
                 header('Refresh:0;url="accueiladmin.php";');
+            }
+            else
+            {
+                echo
+                '<div class="row">
+                <div class=col-1>
+                </div>    
+                <div class="col-8">
+                </div>
+                <div class=col-3>
+                <h5 class="text-center">Se connecter</h5>
+                <h6 class="text-center">Identifiant/Mot de passe incorrect</h6>
+                <div class="text-center">
+                <form action="./accueil.php" method="post">
+                <label for="ID">Identifiant</label><br>
+                <input type="email" id="ID" name="ID"><br>
+                <label for="lname">Mot de passe</label><br>
+                <input type="password" id="MDP" name="MDP"><br><br>
+                <input type="submit" value="Se connecter" name="btnConnecter">
+                </form>
+                </div>
+                </div>
+                </div>';
             }
         }
     }
@@ -117,7 +140,7 @@ else
     <h3 class="text-center">'.$_SESSION["codepostal"].' '.$_SESSION["ville"].'</h3>
     <div>
     </br>
-    <div class="d-flex justify-content-center">
+    <div class="text-center">
     <form action="./accueil.php" method="post">
     <input type="submit" value="Déconnexion" name="btnDéconnecter">
     </form>

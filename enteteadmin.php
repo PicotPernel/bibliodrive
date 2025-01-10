@@ -15,13 +15,16 @@
                         <button class="btn btn-secondary" type="submit">Rechercher</button>
                     </form>
                     <ul>
-                        <li class="nav-item">
-                        <a class="btn btn-secondary" href="./panier.php" size=55>
+                        <li class="nav-item">      
+                            <a class="btn btn-secondary" href="./ajouterutilisateur.php" size=55>
                                 Ajouter utilisateur
                             </a>
-                            <a class="btn btn-secondary" href="./panier.php" size=55>
-                                Ajouter Livre
+                            <a class="btn btn-secondary" href="./ajouterlivre.php" size=55>
+                                Ajouter livre
                             </a>   
+                            <a class="btn btn-secondary" href="./accueil.php" size=55>
+                                Accueil
+                            </a> 
                             <a class="btn btn-secondary" href="./panier.php" size=55>
                                 Panier
                             </a>
