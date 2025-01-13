@@ -8,7 +8,7 @@ echo '<div class="row">
     <div class=col-1>
     </div>
     <div class=col-8>
-        <form method="post">
+        <form action="./ajouterutilisateur.php" method="post">
             <h2>Email</h2>    
             <input type="text" name="mel">
             <br>
@@ -38,14 +38,15 @@ echo '<div class="row">
 else
 {
     require_once('connexion.php');
-    $select = $connexion->prepare("INSERT INTO `utilisateur` (`mel`, `motdepasse`, `nom`, `prenom`, `adresse`, `ville`, `codepostal`, `profil`) VALUES (':mel', ':mdp', ':nom', ':prenom', ':adresse', ':ville', ':cd', 'utilisateur') ");
+    $select = $connexion->prepare("INSERT INTO utilisateur (mel, motdepasse, nom, prenom, adresse, ville, codepostal, profil) VALUES (:mel, :mdp, :nom, :prenom, :adresse, :ville, :cd, :utilisateur)");
     $select->setFetchMode(PDO::FETCH_OBJ);
     $select->bindValue(":mel",$_POST["mel"]);    
     $select->bindValue(":mdp",$_POST["motdepasse"]);
     $select->bindValue(":nom",$_POST["nom"]);    
     $select->bindValue(":prenom",$_POST["prenom"]);
     $select->bindValue(":adresse",$_POST["adresse"]);
-    $select->bindValue(":ville",$_POST["ville"]);    
+    $select->bindValue(":ville",$_POST["ville"]);
     $select->bindValue(":cd",$_POST["codepostal"]);
+    $select->bindValue(":utilisateur","utilisateur");
     $select->execute();
 }

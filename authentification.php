@@ -60,9 +60,9 @@ if(!isset($_SESSION["nom"]))
                 <h3 class="text-center">'.$_SESSION["codepostal"].' '.$_SESSION["ville"].'</h3>
                 </br>
                 <form action="./accueil.php" method="post">
-                <div class=text-center>    
-                    <input type="submit" value="Déconnexion" name="btnDéconnecter">
-                </div>
+                    <div class=text-center>    
+                        <input type="submit" value="Déconnexion" name="btnDéconnecter">
+                    </div>
                 </form>
                 </div> 
                 </div> 
