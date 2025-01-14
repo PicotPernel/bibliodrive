@@ -1,7 +1,7 @@
 <?php
 include 'enteteadmin.php';
 include 'authentification.php';
-if(isset($_POST["AjoutUtilisateur"]))
+if(!isset($_POST["AjoutUtilisateur"]))
 {
 echo '<div class="row">
         <div class=col-1>
@@ -20,9 +20,9 @@ echo '<div class="row">
                 <h2>Résumé</h2>
                 <textarea class="form-control" rows="5" name="resume"></textarea>
                 <input type="submit" value="Ajouter" name="AjoutUtilisateur">            
-                </form>
+            </form>
         </div>
-    </div>'
+    </div>';
 }
 else
 {
@@ -34,4 +34,5 @@ else
     $select->bindValue(":anneeparution",$_POST["anneeparution"]);    
     $select->bindValue(":resume",$_POST["resume"]);
     $select->execute();
+}
 ?>
